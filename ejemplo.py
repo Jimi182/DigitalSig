@@ -9,6 +9,8 @@ private_key = rsa.generate_private_key(
     backend=default_backend()
 )
 
+public_key = private_key.public_key()
+
 def sign_message(private_key, message):
     signature = private_key.sign(
         message,
